@@ -1,0 +1,4 @@
+baudrate 2 000 000 000
+
+s - start
+f - finish
