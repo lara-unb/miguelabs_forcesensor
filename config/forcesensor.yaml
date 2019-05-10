@@ -1,4 +1,12 @@
-baudrate 2 000 000 000
+## ForceSensor config
+#
+# dev_names:          string identifier to find configs for each device
+# dev_type:           device type (WRD - wired, DNG - dongle or WL - wireless)
+# wired_port:         port address for device when wired
+# calibration:        multiplier for each measurement
 
-s - start
-f - finish
+## Wired Load Cell ##
+dev_names: ['loadcell']
+dev_type: {'loadcell': 'WRD'}
+wired_port: {'loadcell': '/dev/ttyACM0'}
+calibration: {'loadcell': 1.0}

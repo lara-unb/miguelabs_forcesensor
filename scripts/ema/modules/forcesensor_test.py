@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import time
 import serial
 
@@ -44,15 +42,15 @@ class ForceSensor:
         self.initialize()
 
     def initialize(self):
-        # print 'initializing force sensors...'
+        print 'initializing'
         self.serialport.write('s')
         time.sleep(1.5) # delay until it actually starts
 
         for name in self.sensors:
             self.debias(name)
 
-    def terminate(self):
-        # print 'terminating force sensors...'
+    def shutdown(self):
+        print 'shutting down'
         self.serialport.write('f')
         self.serialport.close()
 
@@ -109,3 +107,20 @@ class ForceSensor:
     #     # print name, " = " , "{0:.3f}".format(force)
         
     #     return [0.0,force,0.0]
+
+if __name__ == '__main__':
+    
+    dict_s = {'dev_names': ['loadcell'],
+              'dev_type': {'loadcell': 'WRD'},
+              'wired_port': {'loadcell': '/dev/ttyACM0'},
+              'calibration': {'loadcell': 1.0}
+              }
+
+    fs_manager = ForceSensor(dict_s)
+
+    for i in range(0,200):
+        for name in fs_manager.sensors:
+            f = fs_manager.getForce(name)
+            print f
+
+    fs_manager.shutdown()
