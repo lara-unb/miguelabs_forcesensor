@@ -59,7 +59,7 @@ def main():
         rate.sleep()
         
     # cleanup
-    fs_manager.shutdown()
+    fs_manager.terminate()
 
 if __name__ == '__main__':
     try:

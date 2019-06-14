@@ -75,7 +75,10 @@ class ForceSensor:
         msg = None
 
         while not msg:
-            msg = self.serialport.readline()
+            try:
+                msg = self.serialport.readline()
+            except serial.SerialException:
+                pass
 
         force = float(msg)*calibration - bias
         force = float("{0:.2f}".format(force))
