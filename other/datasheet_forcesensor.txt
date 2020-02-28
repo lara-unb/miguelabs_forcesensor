@@ -1,0 +1,4 @@
+serial
+baudrate 2 000 000 000
+s - command to start
+f - command to finish
