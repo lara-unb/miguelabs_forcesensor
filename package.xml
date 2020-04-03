@@ -3,7 +3,8 @@
   <version>0.0.2</version>
   <description>
     The miguelabs_forcesensor package provides a ROS driver for the custom-made
-    force sensor built by Miguel Gutierrez. 
+    force sensor built by Miguel Gutierrez. Microcontroller code, schematics and 
+    CAD files are also included.
   </description>
   <author email="lucasdemacedo@lara.unb.br">Lucas De Macedo</author>
 
