@@ -1,12 +1,14 @@
-## ForceSensor config
 #
-# dev_names:          string identifier to find configs for each device
-# dev_type:           device type (WRD - wired, DNG - dongle or WL - wireless)
-# wired_port:         port address for device when wired
-# calibration:        multiplier for each measurement
+# The YAML file is a lightweight markup language file that supports all
+# ROS parameter types. It's used by rosparam to load static parameters to
+# the Parameter Server, which are commonly used to initialize part of a
+# system and rarely change on run-time. Sometimes the user modifies this
+# file before starting a node. This file is usually in the /config subdirectory
+# of a package. Note that when dynamic reconfiguration is implemented for
+# a package, most parameters will be dynamic, making this file barely used.
+#
 
-## Wired Load Cell ##
-dev_names: ['loadcell']
-dev_type: {'loadcell': 'WRD'}
-wired_port: {'loadcell': '/dev/ttyACM0'}
-calibration: {'loadcell': 1.0}
+dev_names: ['loadcell']  # String identifier to find configs for each device
+dev_type: {'loadcell': 'WRD'}  # Device type (WRD-wired, DNG-dongle, WL-wireless)
+wired_port: {'loadcell': '/dev/ttyACM0'}  # Port address for device when wired
+calibration: {'loadcell': 1.0}  # Multiplier for each measurement
