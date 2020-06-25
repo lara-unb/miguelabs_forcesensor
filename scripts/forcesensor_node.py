@@ -15,7 +15,7 @@ http://wiki.ros.org/Nodes
 """
 
 import rospy
-import ema.modules.forcesensor as forcesensor
+import modules.forcesensor as forcesensor
 
 # Import ROS msgs
 from std_msgs.msg import Float64
