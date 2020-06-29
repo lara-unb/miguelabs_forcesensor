@@ -1,9 +1,21 @@
-#!/usr/bin/env python
+"""
+
+Particularly, this code is an auxiliary module for the force sensor
+application. It consists of classes and methods that establish the serial
+comm and give support in a deeper level.
+
+The ROS node uses this code. It gives support in a deeper level, dealing
+with minor details and is supposed to be independent of ROS, meaning it
+shouldn't have to interact with ROS in any way. For example, it would
+establish serial comm and treat raw measurements instead of publishing a
+filtered sensor measurement as a ROS message to other ROS nodes.
+
+"""
 
 import time
 import serial
 
-class ForceSensor:
+class ForceSensor(object):
     def __init__(self, config_dict):
         self.config_dict = config_dict
         self.devices = {}
